@@ -23,3 +23,8 @@ There are no routing configurations as of now, which means that the computers on
 
 This must be done for all systems.  To configure a gateway on Network A to reach a computer on Network B, run the "ip route add 192.168.2.1/24 via
 192.168.1.0 (aka the gateway). 
+
+If you want to get to the internet, you can add a default gateway to the router by assigning an ip address to the router. You can make it so all network requests goes through the default gateway.
+
+![image](https://github.com/apsessoms/Networking/assets/99392512/0b1fb144-9816-4342-8435-fbb1c182bf19)
+
