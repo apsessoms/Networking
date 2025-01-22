@@ -12,17 +12,20 @@
     - Connect the other end of the console cable to your computer's serial port or USB-to-serial adapter.
 
 2. **Identify the Serial Port**
-    - Open a terminal on your Linux Mint machine.
-    - Run the following command to list the available serial ports:
-      ```bash
-      dmesg | grep tty
+    - Open a terminal on your Linux Mint machine.    
+    - Run the following command to locate the dev directory and change into that directory :
+      ```
+      ls
+      cd dev
+      
       ```
     - Look for the output that corresponds to your serial device (e.g., `/dev/ttyUSB0`).
+![cisco switch](https://github.com/user-attachments/assets/3d5d2946-ef8b-4747-b428-af626b472700)
 
 3. **Install a Terminal Emulator**
-    - If you don't have a terminal emulator installed, you can install `minicom` or `screen`:
+    - If you don't have a terminal emulator installed, you can install `putty` or `screen`:
       ```bash
-      sudo apt-get install minicom
+      sudo apt-get install putty
       ```
       or
       ```bash
@@ -30,28 +33,25 @@
       ```
 
 4. **Configure and Start the Terminal Emulator**
-    - Using `minicom`:
+    - Using `putty`:
+   Type putty into your terminal and it will open up the third party app in another screen
       ```bash
-      sudo minicom -s
+      putty
       ```
       - Navigate to "Serial port setup" and configure the following settings:
-         - Serial Device: `/dev/ttyUSB0` (or your identified serial port)
-         - Bps/Par/Bits: `9600 8N1`
-         - Hardware Flow Control: `No`
-         - Software Flow Control: `No`
-      - Save the settings and exit the configuration menu.
-      - Start `minicom` with the configured settings:
-         ```bash
-         sudo minicom
-         ```
-    - Using `screen`:
-      ```bash
-      sudo screen /dev/ttyUSB0 9600
-      ```
+         - Select Serial Device: `/dev/ttyUSB0` (or your identified serial port)
+         - Paste the output from the previous step (ttyUSB0) next to /dev/
+         - Click on open
+    ![image](https://github.com/user-attachments/assets/1c325dfb-205d-406c-85f3-8f8d99b10469)
+
 
 5. **Access the Cisco Switch**
     - You should now see the console output from the Cisco switch.
     - Press `Enter` to get the switch prompt.
+      
+    ![image](https://github.com/user-attachments/assets/2368ecc3-8ab8-4af7-a85d-c115b78377f1)
+
+ Make sure you press enter or it won't start up the terminal! :) 
 
 6. **Exit the Terminal Emulator**
     - To exit `minicom`, press `Ctrl+A` followed by `X`.
